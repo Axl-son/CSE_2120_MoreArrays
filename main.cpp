@@ -23,7 +23,7 @@ bool Quit = false;
 
 int main()
 {
-    if (Quit == true) {
+    if (Quit == true) { // just to quit
         return 0;
     }
 
@@ -130,7 +130,7 @@ void Replace()
 
         cout << "   ID Found At Index " << IDIndex(desirID) + 1 << ", New ID :"; cin >> newID;
 
-        IDs[IDIndex(desirID)] = newID;
+        IDs[IDIndex(desirID)] = newID; // sets old ID to new ID
         cout << "   ID Replaced ";
     }
     else {
@@ -154,12 +154,14 @@ void Delete()
         if (confirm == desirID) {
             cout << "   ID Deleted";
 
-            int index = IDIndex(desirID);
+            int index = IDIndex(desirID); // to start from (deleted ID's index)
 
             for (int i = index; i < fullIDs; i++) {
 
                 IDs[i] = IDs[i + 1]; // copies the element on its "right"
             }
+
+            fullIDs--;
         }
         else {
 
